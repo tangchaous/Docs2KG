@@ -1,4 +1,6 @@
-"""Generate the code reference pages."""
+"""Generate the code reference pages
+The output is written to the `docs/sources` directory.
+"""
 
 from pathlib import Path
 
@@ -39,7 +41,6 @@ for path in sorted(src.rglob("*.py")):
         continue
 
     with mkdocs_gen_files.open(full_doc_path, "w") as fd:
-
         fd.write("## Code Example\n\n")
         fd.write("```python\n")
         with open(path) as main_file:
